@@ -26,13 +26,9 @@
 #ifndef __ARES_MATH_H
 #define __ARES_MATH_H
 
-#ifdef _MSC_VER
-typedef __int64          ares_int64_t;
-typedef unsigned __int64 ares_uint64_t;
-#else
-typedef long long          ares_int64_t;
-typedef unsigned long long ares_uint64_t;
-#endif
+#include <stdint.h>
+typedef int64_t  ares_int64_t;
+typedef uint64_t ares_uint64_t;
 
 ares_bool_t   ares_is_64bit(void);
 size_t        ares_round_up_pow2(size_t n);
